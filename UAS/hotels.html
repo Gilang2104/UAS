@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Hotels in Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Contoh CSS untuk layout hotels.html */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        nav ul li a:hover {
+            color: #ccc;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hotel {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        .hotel img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .hotel-info {
+            margin-bottom: 10px;
+        }
+        .hotel-info h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
+        }
+        .hotel-info p {
+            margin: 0;
+            color: #666;
+        }
+        .reservation {
+            display: flex;
+            align-items: center;
+        }
+        .reservation label {
+            margin-right: 10px;
+        }
+        .reservation input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .reservation button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .reservation button:hover {
+            background-color: #45a049;
+        }
+        .total {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Indonesian Tourism</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="culture.html">Culture</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="contact.html" onclick="toggleContact()">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Favorite Hotels in Indonesia</h2>
+            
+            <article class="hotel">
+                <img src="images/Hotel1.jpg" alt="Alila Villas Uluwatu, Bali">
+                <div class="hotel-info">
+                    <h3>Alila Villas Uluwatu, Bali</h3>
+                    <p>Fasilitas: Private pool, spa, ocean view.<br>Harga: $400/malam.<br>Alamat: Jl. Belimbing Sari, Uluwatu, Bali.<br>Info: Resort mewah dengan pemandangan laut yang menakjubkan.</p>
+                </div>
+                <div class="reservation">
+                    <label for="alila-nights">Malam Menginap:</label>
+                    <input type="number" id="alila-nights" min="1" value="1">
+                    <button onclick="calculateBill('alila', 400)">Pesan Sekarang</button>
+                    <p class="total" id="alila-total">Total: $400</p>
+                </div>
+            </article>
+            
+            <article class="hotel">
+                <img src="images/hotel2.jpeg" alt="Melia Bali">
+                <div class="hotel-info">
+                    <h3>Melia Bali</h3>
+                    <p>Fasilitas: Private beach, kolam renang, spa.<br>Harga: $250/malam.<br>Alamat: Nusa Dua, Bali.<br>Info: Resort bergaya tropis di tepi pantai.</p>
+                </div>
+                <div class="reservation">
+                    <label for="melia-nights">Malam Menginap:</label>
+                    <input type="number" id="melia-nights" min="1" value="1">
+                    <button onclick="calculateBill('melia', 250)">Pesan Sekarang</button>
+                    <p class="total" id="melia-total">Total: $250</p>
+                </div>
+            </article>
+            
+            <article class="hotel">
+                <img src="images/hotel3.png" alt="Hyatt Regency Yogyakarta">
+                <div class="hotel-info">
+                    <h3>Hyatt Regency Yogyakarta</h3>
+                    <p>Fasilitas: Kolam renang, spa, lapangan golf.<br>Harga: $180/malam.<br>Alamat: Jl. Palagan Tentara Pelajar, Yogyakarta.<br>Info: Hotel mewah di tengah keindahan alam Yogyakarta.</p>
+                </div>
+                <div class="reservation">
+                    <label for="hyatt-nights">Malam Menginap:</label>
+                    <input type="number" id="hyatt-nights" min="1" value="1">
+                    <button onclick="calculateBill('hyatt', 180)">Pesan Sekarang</button>
+                    <p class="total" id="hyatt-total">Total: $180</p>
+                </div>
+            </article>
+            
+            <!-- Tambahkan lebih banyak informasi hotel di sini jika diperlukan -->
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Indonesian Tourism</p>
+    </footer>
+
+    <script>
+        function calculateBill(hotel, pricePerNight) {
+            var nightsInput = document.getElementById(hotel + '-nights');
+            var nights = parseInt(nightsInput.value);
+            var total = nights * pricePerNight;
+            var totalElement = document.getElementById(hotel + '-total');
+            totalElement.textContent = 'Total: $' + total;
+        }
+    </script>
+</body>
+</html>
